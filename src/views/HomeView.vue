@@ -204,8 +204,12 @@ export default class HomeView extends Vue {
   }
 
   async getPosts() {
-    const res = await axios.get("/app/posts", { baseURL: API_URL });
-    this.posts = res.data;
+    try {
+      const res = await axios.get("/app/posts", { baseURL: API_URL });
+      this.posts = res.data;
+    } catch (e) {
+      console.log(e);
+    }
   }
 }
 </script>

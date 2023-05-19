@@ -11,15 +11,19 @@ import { PostModel } from "@/models/post";
 })
 export default class PostListView extends Vue {
   @Prop({ required: true })
-  posts!: PostModel[];
+  posts: PostModel[] = [];
 
   mounted() {
     this.getPosts();
   }
 
   async getPosts() {
-    const res = await axios.get("/app/posts", { baseURL: API_URL });
-    this.posts = res.data;
+    try {
+      const res = await axios.get("/app/posts", { baseURL: API_URL });
+      this.posts = res.data;
+    } catch (e) {
+      console.error("getPosts", e);
+    }
   }
 }
 </script>

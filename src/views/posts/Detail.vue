@@ -32,23 +32,31 @@ export default class PostDetailView extends Vue {
   }
 
   async getPost(id: string) {
-    const res = await axios.get("/app/posts/" + id, { baseURL: API_URL });
-    this.post = res.data;
-    this.giscus = {
-      repo: GISCUS_REPO,
-      repoId: GISCUS_REPO_ID,
-      category: GISCUS_CATEGORY,
-      categoryid: GISCUS_CATEGORY_ID,
-    };
+    try {
+      const res = await axios.get("/app/posts/" + id, { baseURL: API_URL });
+      this.post = res.data;
+      this.giscus = {
+        repo: GISCUS_REPO,
+        repoId: GISCUS_REPO_ID,
+        category: GISCUS_CATEGORY,
+        categoryid: GISCUS_CATEGORY_ID,
+      };
 
-    this.giscus.term = this.post.title;
+      this.giscus.term = this.post.title;
+    } catch (e) {
+      console.error("getPost", e);
+    }
   }
 
   async getPostContent(id: string) {
-    const res = await axios.get("/app/posts/" + id + "/content", {
-      baseURL: API_URL,
-    });
-    this.postContent = res.data;
+    try {
+      const res = await axios.get("/app/posts/" + id + "/content", {
+        baseURL: API_URL,
+      });
+      this.postContent = res.data;
+    } catch (e) {
+      console.error("getPostContent", e);
+    }
   }
 
   formatDate(dateString: string) {
