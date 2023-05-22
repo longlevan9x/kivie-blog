@@ -10,7 +10,7 @@ export default class PostCard extends Vue {
 </script>
 
 <template>
-  <div class="entry__thumb">
+  <div class="entry__thumb" style="text-align: center">
     <RouterLink :to="post.id" class="thumb-link">
       <img :src="post.cover ?? '/images/eye.png'" alt="" />
       <!--   :srcset="post.cover +' 1x,' + post.cover +' 2x,'"-->
