@@ -176,7 +176,7 @@
         $heroSlider.on('init', function(event, slick){
             setTimeout(function() {
                 $animateEl.first().addClass('animated');
-            }, 500);
+            }, 0);
         });
 
         $heroSlider.slick({
@@ -185,9 +185,9 @@
             speed: 1000,
             fade: true,
             cssEase: 'linear',
-            autoplay: false,
-            autoplaySpeed: 5000,
-            pauseOnHover: false
+            autoplay: true,
+            autoplaySpeed: 2000,
+            pauseOnHover: true
         });
 
         $heroSlider.on('beforeChange', function(event, slick, currentSlide){
@@ -301,7 +301,11 @@
         ssMobileMenu();
         ssSearch();
         // ssMasonry();
-        ssSlickSlider();
+        window.addEventListener("getSliderDone", event => {
+            setTimeout(() => {
+                ssSlickSlider();
+            }, 1000);
+        });
         ssAOS();
         ssAlertBoxes();
         ssSmoothScroll();

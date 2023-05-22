@@ -7,9 +7,9 @@ export default class Header extends Vue {}
 <template>
   <!-- preloader
      ================================================== -->
-  <div id="preloader">
-    <div id="loader"></div>
-  </div>
+  <!--  <div id="preloader">-->
+  <!--    <div id="loader"></div>-->
+  <!--  </div>-->
 
   <!-- header
   ================================================== -->
