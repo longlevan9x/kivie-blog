@@ -25,7 +25,7 @@ export default class SliderListCard extends Vue {
 
         <div class="row s-hero__slide-content animate-this">
           <div class="column">
-            <div class="s-hero__slide-meta">
+            <div class="s-hero__slide-meta" style="display: none">
               <span class="cat-links">
                 <a href="#0">Lifestyle</a>
                 <a href="#0">Design</a>
