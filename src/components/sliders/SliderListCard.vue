@@ -1,7 +1,7 @@
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 import { Prop } from "vue-property-decorator";
-import { SliderModel } from "@/models/Slider";
+import { SliderModel } from "@/models/slider";
 
 @Options({
   components: {},

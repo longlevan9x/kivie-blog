@@ -60,7 +60,7 @@ import PostListCard from "@/components/posts/PostListCard.vue";
 import { PostModel } from "@/models/post";
 import { API_URL } from "@/environment";
 import axios from "axios";
-import { SliderModel } from "@/models/Slider";
+import { SliderModel } from "@/models/slider";
 import SliderListCard from "@/components/sliders/SliderListCard.vue";
 
 @Options({
